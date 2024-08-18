@@ -123,6 +123,19 @@ bibwarn=true, % Warnung bei fehlerhafter bib-Datei
 	\printfield{doi}%
 	\finentry}
 
+%% Definiert @MISC/KI Eintrag
+\DeclareBibliographyDriver{misc}{%
+  \printnames{author}%
+  % \newunit\newblockpunct
+  \setunit*{,\space}%
+  %\newunit\newblock
+  \printfield{year}%
+  \setunit*{,\space Aufruf am:\space}%
+  \printfield{note}%
+  \finentry}
+
+
+
 %Doppelpunkt nach dem letzten Autor
 \renewcommand*{\labelnamepunct}{\addcolon\addspace }
 
