@@ -154,7 +154,7 @@ doi=false,
 useprefix=true, % 'von' im Namen beachten (beim Anzeigen)
 mincrossrefs = 1
 ]{biblatex}%iso dateformat für YYYY-MM-DD
-
+\setlength\bibitemsep{\baselineskip}
 %weitere Anpassungen für BibLaTex
 \input{skripte/modsBiblatex2018}
 
@@ -456,7 +456,7 @@ mincrossrefs = 1
 % noch weitere Arten von Zusammenfassungen eines Literaturverzeichnisse zu
 % erzeugen.
 % Beispiel: [type=book,type=article]
-\printbibliography[nottype=misc,nottype=online,heading=bibintoc,title={\langde{Literaturverzeichnis}\langen{Bibliography}}]
+\printbibliography[nottype=software,nottype=online,heading=bibintoc,title={\langde{Literaturverzeichnis}\langen{Bibliography}}]
 
 % neue Seite für Internetquellen-Verzeichnis
 \newpage
@@ -470,9 +470,8 @@ mincrossrefs = 1
 
 % neue Seite für KI-Quellen-Verzeichnis
 \newpage
-
 % KI-Quellen-Verzeichnis anzeigen.
-\printbibliography[type=misc,heading=subbibliography,title={\headingNameAiSources}]
+\printbibliography[type=software,heading=subbibliography,title={\headingNameAiSources}]
 
 \input{kapitel/anhang/erklaerung}
 \end{document}
