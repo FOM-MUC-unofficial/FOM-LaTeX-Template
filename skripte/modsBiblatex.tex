@@ -123,31 +123,21 @@ bibwarn=true, % Warnung bei fehlerhafter bib-Datei
 	\printfield{doi}%
 	\finentry}
 
-%% Definiert @MISC/KI Eintrag
-\DeclareBibliographyDriver{ai}{%
+% Definiert @MISC/KI Eintrag
+\DeclareBibliographyDriver{misc}{%
   \printnames{author}%
-  % \newunit\newblockpunct
+  \newunit\newblockpunct
+  \setunit*{.\space Version:\space}%    % Fügt "Version" hinzu
+  \printfield{version}%                  % Druckt die Versionsnummer aus
   \setunit*{,\space}%
   %\newunit\newblock
   \printfield{year}%
-  \printfield{note}%
-  \setunit*{,\space Version}%
-  \finentry
-}
+  \setunit*{,\space Aufruf am:\space}%
+  \finentry}
 
-\DeclareBibliographyDriver{software}{%  % Beginn der Definition eines neuen Typs "software"
-  \printnames{author}%                  % Druckt die Namen der Autoren
-  \setunit*{ (\printfield{year})}%       % Druckt das Jahr in Klammern
-  \addcomma\space                        % Fügt ein Komma und ein Leerzeichen hinzu
-  \printfield{title}%                    % Druckt den Titel der Software aus
-  \setunit*{.\space Version: \space}%     % Fügt "Version:" hinzu
-  \printfield{version}%                  % Druckt die Versionsnummer aus
-  \setunit*{\addcomma\space}%            % Fügt ein Komma und ein Leerzeichen hinzu
-  \printfield{organization}%             % Druckt die Organisation oder den Herausgeber aus
-  \setunit*{,\space Zugriff am:\space}%  % Fügt "Zugriff am:" hinzu
-  \printfield{date}%                     % Druckt das Datum des Zugriffs aus
-  \finentry                               % Beendet den Eintrag
-}
+
+
+
 
 %Doppelpunkt nach dem letzten Autor
 \renewcommand*{\labelnamepunct}{\addcolon\addspace }
